@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibecoding模拟器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="noise"></div>
+
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Vibecoding Simulator For The Terminal Age</p>
+      <h1>Vibecoding模拟器</h1>
+      <p class="hero-text">
+        你是一名被死线、灵感、Token 和线上事故同时追杀的开发者。
+        从开局构筑开始，穿过十余个开发阶段、随机事件、版本灾害和灵感暴击，
+        看这次项目究竟会成为传说级产品，还是一场足够精彩的事故复盘。
+      </p>
+      <div class="hero-actions">
+        <button id="startRunBtn" class="primary-btn">开始一局</button>
+        <button id="randomCardBtn" class="secondary-btn">今日运势</button>
+        <button id="viewCodexBtn" class="ghost-btn">查看全部卡片</button>
+      </div>
+    </div>
+
+    <aside class="hero-panel">
+      <div class="panel-label">玩法提要</div>
+      <ul class="rules-list">
+        <li>开局先从 8 张随机卡里挑 3 张，作为这次人生的起手构筑。</li>
+        <li>整局会经历一条更长的开发生涯，每个阶段都有随机事件、选卡和挑战结算。</li>
+        <li>事件会受你当前构筑影响，不同流派会更容易撞上不同的命运分支。</li>
+        <li>下方有完整图鉴，既能查全卡，也能把它当成 Vibecoding 段子生成器。</li>
+      </ul>
+    </aside>
+  </header>
+
+  <main class="layout">
+    <section class="top-grid">
+      <article class="panel status-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Run Status</p>
+            <h2>本局状态</h2>
+          </div>
+          <span id="runStatusBadge" class="status-badge idle">待机中</span>
+        </div>
+
+        <div id="statsGrid" class="stats-grid"></div>
+
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span>开发生涯进度</span>
+            <span id="chapterText">开局 0 / 3</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="subpanel">
+          <div class="subpanel-head">
+            <h3>当前流派</h3>
+          </div>
+          <div id="modifierList" class="pill-row"></div>
+        </div>
+
+        <div class="subpanel">
+          <div class="subpanel-head">
+            <h3>上一阶段</h3>
+          </div>
+          <div id="encounterSummary" class="encounter-summary"></div>
+        </div>
+      </article>
+
+      <article class="panel decision-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Draft</p>
+            <h2>当前抉择</h2>
+          </div>
+          <div class="mini-actions">
+            <button id="restartRunBtn" class="ghost-btn small">重开本局</button>
+          </div>
+        </div>
+
+        <p id="runHint" class="run-hint">
+          点击“开始一局”后，你会先做开局构筑，然后一路推进整条开发人生线。
+        </p>
+
+        <div id="draftChoices" class="draft-grid"></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel quickdraw-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Lucky Draw</p>
+            <h2>今日运势</h2>
+          </div>
+        </div>
+        <div id="quickDrawCard" class="quickdraw-card"></div>
+      </article>
+
+      <article class="panel build-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Build</p>
+            <h2>本局构筑</h2>
+          </div>
+          <span id="pickedCount" class="counter-pill">0 张</span>
+        </div>
+        <div id="pickedCards" class="picked-cards"></div>
+      </article>
+
+      <article class="panel log-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Run Log</p>
+            <h2>开发日志</h2>
+          </div>
+        </div>
+        <div id="logList" class="log-list"></div>
+      </article>
+    </section>
+
+    <section id="codexSection" class="panel codex-panel">
+      <div class="panel-head">
+        <div>
+          <p class="panel-kicker">Codex</p>
+          <h2>全部卡片图鉴</h2>
+        </div>
+        <div id="filterBar" class="filter-bar"></div>
+      </div>
+      <p class="codex-note">
+        这些卡片会成为你整局开发人生的天赋、诅咒和奇物。
+        有些能把你抬进神话结局，有些只负责把你的事故写得更好看。
+      </p>
+      <div id="codexGrid" class="codex-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

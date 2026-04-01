@@ -1,0 +1,390 @@
+{
+  "cards": [
+    {
+      "id": "back_to_basics",
+      "name": "回归基本功",
+      "rarity": "legendary",
+      "kind": "hybrid",
+      "flavor": "你将被禁止 Vibe coding，但是古法编程能力提升 70%。",
+      "effectText": "Vibe 共鸣在遭遇战中失效；古法编程 +7，稳定性 +2。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 7 },
+        { "type": "stat", "key": "stability", "value": 2 },
+        { "type": "modifierSet", "key": "noVibe", "value": true }
+      ]
+    },
+    {
+      "id": "overflow",
+      "name": "溢流",
+      "rarity": "epic",
+      "kind": "curse",
+      "flavor": "Token 消耗翻倍，Vibe coding 效率提升 30%。",
+      "effectText": "之后所有遭遇战的 Token 消耗翻倍；Vibe 共鸣 +6，热度 +2。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 6 },
+        { "type": "stat", "key": "hype", "value": 2 },
+        { "type": "modifierMultiply", "key": "tokenMultiplier", "value": 2 }
+      ]
+    },
+    {
+      "id": "demon_on_shoulder",
+      "name": "你肩上的恶魔",
+      "rarity": "epic",
+      "kind": "hybrid",
+      "flavor": "随机产生 bug，但是解决后恢复所消耗 Token。",
+      "effectText": "每场遭遇战都有概率额外冒出 bug；失败时返还本次消耗的 Token；Vibe 共鸣 +2。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 2 },
+        { "type": "modifierSet", "key": "failureRefund", "value": true },
+        { "type": "modifierSet", "key": "demonBug", "value": true }
+      ]
+    },
+    {
+      "id": "dual_wield",
+      "name": "双刀流",
+      "rarity": "legendary",
+      "kind": "blessing",
+      "flavor": "你可以同时使用 Claude Opus 4.6 和 GPT-5.4 共同完成任务。",
+      "effectText": "每场遭遇战额外 +2 实力；以后每轮多看 1 张备选卡；古法编程 +3，Vibe 共鸣 +3。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 3 },
+        { "type": "stat", "key": "vibe", "value": 3 },
+        { "type": "modifierSet", "key": "dualModel", "value": true },
+        { "type": "modifierAdd", "key": "extraDraft", "value": 1 }
+      ]
+    },
+    {
+      "id": "prompt_alchemy",
+      "name": "提示词炼金术",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "你开始把一句需求熬成八段结构化咒文。",
+      "effectText": "Vibe 共鸣 +4，Token 储备 +4，遭遇战基础实力 +1。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 4 },
+        { "type": "stat", "key": "tokens", "value": 4 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "offline_meditation",
+      "name": "断网修行",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "模型失联的一刻，你终于听见了自己的键盘声。",
+      "effectText": "古法编程 +5，稳定性 +3，Token 储备 +2，Vibe 共鸣 -2。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 5 },
+        { "type": "stat", "key": "stability", "value": 3 },
+        { "type": "stat", "key": "tokens", "value": 2 },
+        { "type": "stat", "key": "vibe", "value": -2 }
+      ]
+    },
+    {
+      "id": "ancestral_script",
+      "name": "祖传脚本",
+      "rarity": "rare",
+      "kind": "relic",
+      "flavor": "那份脚本从上古时代幸存下来，没人知道它为什么能跑，但它就是能跑。",
+      "effectText": "稳定性 +4，Token 储备 +3，之后每场遭遇战的消耗 -1。",
+      "effects": [
+        { "type": "stat", "key": "stability", "value": 4 },
+        { "type": "stat", "key": "tokens", "value": 3 },
+        { "type": "modifierAdd", "key": "costReduction", "value": 1 }
+      ]
+    },
+    {
+      "id": "test_faith",
+      "name": "单测信仰",
+      "rarity": "epic",
+      "kind": "blessing",
+      "flavor": "你写下第一个断言，bug 开始发抖。",
+      "effectText": "稳定性 +6，获得 1 层护盾，热度 -1。",
+      "effects": [
+        { "type": "stat", "key": "stability", "value": 6 },
+        { "type": "stat", "key": "hype", "value": -1 },
+        { "type": "modifierAdd", "key": "shield", "value": 1 }
+      ]
+    },
+    {
+      "id": "context_compression",
+      "name": "上下文压缩",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "删掉第八层铺垫后，模型终于明白你到底要什么。",
+      "effectText": "Token 储备 +6，Vibe 共鸣 +2，遭遇战基础实力 +1。",
+      "effects": [
+        { "type": "stat", "key": "tokens", "value": 6 },
+        { "type": "stat", "key": "vibe", "value": 2 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "inspiration_tunnel",
+      "name": "灵感隧穿",
+      "rarity": "epic",
+      "kind": "hybrid",
+      "flavor": "凌晨三点，你和需求建立了量子纠缠。",
+      "effectText": "Vibe 共鸣 +6，热度 +3，但稳定性 -2。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 6 },
+        { "type": "stat", "key": "hype", "value": 3 },
+        { "type": "stat", "key": "stability", "value": -2 }
+      ]
+    },
+    {
+      "id": "requirement_mimic",
+      "name": "需求变形怪",
+      "rarity": "rare",
+      "kind": "curse",
+      "flavor": "今天它想做工具，明天它又想做社区，后天它想做平台。",
+      "effectText": "热度 +4，Vibe 共鸣 +1，但稳定性 -4，Token 储备 -2。",
+      "effects": [
+        { "type": "stat", "key": "hype", "value": 4 },
+        { "type": "stat", "key": "vibe", "value": 1 },
+        { "type": "stat", "key": "stability", "value": -4 },
+        { "type": "stat", "key": "tokens", "value": -2 }
+      ]
+    },
+    {
+      "id": "pr_magician",
+      "name": "PR 魔术师",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "你的描述写得像诗，review 里的风险像风一样飘过去了。",
+      "effectText": "热度 +5，遭遇战基础实力 +1，但稳定性 -1。",
+      "effects": [
+        { "type": "stat", "key": "hype", "value": 5 },
+        { "type": "stat", "key": "stability", "value": -1 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "ruthless_rollback",
+      "name": "无情回滚",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "昨天的你刺伤今天的你，但至少今天还能上线。",
+      "effectText": "稳定性 +5，项目完整度 +1，Vibe 共鸣 -1，Token 储备 -2。",
+      "effects": [
+        { "type": "stat", "key": "stability", "value": 5 },
+        { "type": "stat", "key": "integrity", "value": 1 },
+        { "type": "stat", "key": "vibe", "value": -1 },
+        { "type": "stat", "key": "tokens", "value": -2 }
+      ]
+    },
+    {
+      "id": "meeting_shield",
+      "name": "会议护盾",
+      "rarity": "common",
+      "kind": "blessing",
+      "flavor": "你成功把会开成异步文档，节省的不是时间，是寿命。",
+      "effectText": "Token 储备 +4，稳定性 +2，获得 1 层护盾。",
+      "effects": [
+        { "type": "stat", "key": "tokens", "value": 4 },
+        { "type": "stat", "key": "stability", "value": 2 },
+        { "type": "modifierAdd", "key": "shield", "value": 1 }
+      ]
+    },
+    {
+      "id": "fullstack_possession",
+      "name": "全栈附体",
+      "rarity": "epic",
+      "kind": "blessing",
+      "flavor": "你同时听见前端、后端、运维和产品在脑内讲话。",
+      "effectText": "古法编程 +3，Vibe 共鸣 +3，稳定性 +3，Token 储备 -3。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 3 },
+        { "type": "stat", "key": "vibe", "value": 3 },
+        { "type": "stat", "key": "stability", "value": 3 },
+        { "type": "stat", "key": "tokens", "value": -3 }
+      ]
+    },
+    {
+      "id": "cache_oracle",
+      "name": "缓存神谕",
+      "rarity": "rare",
+      "kind": "relic",
+      "flavor": "你开始相信第二次打开一定更快，直到宇宙开始配合你。",
+      "effectText": "Token 储备 +5，Vibe 共鸣 +1，之后每次成功额外获得 2 Token。",
+      "effects": [
+        { "type": "stat", "key": "tokens", "value": 5 },
+        { "type": "stat", "key": "vibe", "value": 1 },
+        { "type": "modifierAdd", "key": "successTokenBonus", "value": 2 }
+      ]
+    },
+    {
+      "id": "midnight_hotfix",
+      "name": "午夜热修",
+      "rarity": "rare",
+      "kind": "hybrid",
+      "flavor": "线上炸了，但你还醒着，所以你暂时还不是输家。",
+      "effectText": "古法编程 +4，项目完整度 +1，热度 +2，Token 储备 -4。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 4 },
+        { "type": "stat", "key": "integrity", "value": 1 },
+        { "type": "stat", "key": "hype", "value": 2 },
+        { "type": "stat", "key": "tokens", "value": -4 }
+      ]
+    },
+    {
+      "id": "bug_bounty_hunter",
+      "name": "Bug 赏金猎人",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "别人看到报错会皱眉，你看到报错只会搓手。",
+      "effectText": "古法编程 +2，热度 +1，之后每次成功额外获得 3 Token。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 2 },
+        { "type": "stat", "key": "hype", "value": 1 },
+        { "type": "modifierAdd", "key": "successTokenBonus", "value": 3 }
+      ]
+    },
+    {
+      "id": "quantum_intern",
+      "name": "量子实习生",
+      "rarity": "common",
+      "kind": "hybrid",
+      "flavor": "他会提交代码，也会提交宇宙噪声，直到你分不清哪一段是他写的。",
+      "effectText": "以后每轮多看 1 张备选卡；Vibe 共鸣 +2，稳定性 -3；有 50% 概率额外获得 4 Token。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 2 },
+        { "type": "stat", "key": "stability", "value": -3 },
+        { "type": "modifierAdd", "key": "extraDraft", "value": 1 },
+        {
+          "type": "chance",
+          "chance": 0.5,
+          "success": [
+            { "type": "stat", "key": "tokens", "value": 4 },
+            { "type": "log", "text": "量子实习生莫名其妙地帮你省下了 4 Token。" }
+          ],
+          "failure": [
+            { "type": "log", "text": "量子实习生留下了两条意义不明的提交记录。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "copy_scripture",
+      "name": "Ctrl+C 圣经",
+      "rarity": "common",
+      "kind": "relic",
+      "flavor": "不是所有复制都是抄袭，有些复制只是在人类知识树上摘果子。",
+      "effectText": "古法编程 +1，Token 储备 +2，热度 +2，但稳定性 -2。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 1 },
+        { "type": "stat", "key": "tokens", "value": 2 },
+        { "type": "stat", "key": "hype", "value": 2 },
+        { "type": "stat", "key": "stability", "value": -2 }
+      ]
+    },
+    {
+      "id": "docs_summon",
+      "name": "文档召唤术",
+      "rarity": "common",
+      "kind": "blessing",
+      "flavor": "你发现写文档并不会拖慢进度，反而能让未来的自己少骂两句。",
+      "effectText": "古法编程 +2，稳定性 +3，Token 储备 +1，遭遇战基础实力 +1。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 2 },
+        { "type": "stat", "key": "stability", "value": 3 },
+        { "type": "stat", "key": "tokens", "value": 1 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "version_freeze",
+      "name": "版本冻结",
+      "rarity": "epic",
+      "kind": "relic",
+      "flavor": "任何人都不能再改需求，包括五分钟前的你自己。",
+      "effectText": "稳定性 +5，Vibe 共鸣 -3，之后每场遭遇战的消耗 -2。",
+      "effects": [
+        { "type": "stat", "key": "stability", "value": 5 },
+        { "type": "stat", "key": "vibe", "value": -3 },
+        { "type": "modifierAdd", "key": "costReduction", "value": 2 }
+      ]
+    },
+    {
+      "id": "review_angel",
+      "name": "AI Code Review 天使",
+      "rarity": "epic",
+      "kind": "blessing",
+      "flavor": "它不会替你写人生，但会在你快要把 if 写反时把你拽回来。",
+      "effectText": "稳定性 +2，获得 2 层护盾。",
+      "effects": [
+        { "type": "stat", "key": "stability", "value": 2 },
+        { "type": "modifierAdd", "key": "shield", "value": 2 }
+      ]
+    },
+    {
+      "id": "human_compiler",
+      "name": "人肉编译器",
+      "rarity": "rare",
+      "kind": "blessing",
+      "flavor": "你只是看了一眼报错，就知道少的是哪一个逗号和哪一段尊严。",
+      "effectText": "古法编程 +6，Token 储备 +3，Vibe 共鸣 -2。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 6 },
+        { "type": "stat", "key": "tokens", "value": 3 },
+        { "type": "stat", "key": "vibe", "value": -2 }
+      ]
+    },
+    {
+      "id": "generator_factory",
+      "name": "复制生产线",
+      "rarity": "epic",
+      "kind": "hybrid",
+      "flavor": "你开始生成生成器来生成生成器，直到产能和迷惑同步扩散。",
+      "effectText": "Vibe 共鸣 +5，热度 +4，但稳定性 -3；每次成功额外获得 1 Token。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 5 },
+        { "type": "stat", "key": "hype", "value": 4 },
+        { "type": "stat", "key": "stability", "value": -3 },
+        { "type": "modifierAdd", "key": "successTokenBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "cold_start_caffeine",
+      "name": "冷启动咖啡因",
+      "rarity": "common",
+      "kind": "blessing",
+      "flavor": "第一口下去的时候，项目还没启动；第二口下去的时候，世界已经能编译。",
+      "effectText": "古法编程 +1，Vibe 共鸣 +2，项目完整度 +1，Token 储备 +2。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 1 },
+        { "type": "stat", "key": "vibe", "value": 2 },
+        { "type": "stat", "key": "integrity", "value": 1 },
+        { "type": "stat", "key": "tokens", "value": 2 }
+      ]
+    },
+    {
+      "id": "ancestral_regex",
+      "name": "祖传正则",
+      "rarity": "rare",
+      "kind": "hybrid",
+      "flavor": "你不知道它为什么对，但你更不敢知道它为什么错。",
+      "effectText": "古法编程 +4，Token 储备 +1，遭遇战基础实力 +1，但稳定性 -1。",
+      "effects": [
+        { "type": "stat", "key": "craft", "value": 4 },
+        { "type": "stat", "key": "tokens", "value": 1 },
+        { "type": "stat", "key": "stability", "value": -1 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
+    },
+    {
+      "id": "bait_and_switch",
+      "name": "偷梁换柱",
+      "rarity": "epic",
+      "kind": "curse",
+      "flavor": "你的模型中转站卖给你的好像是 GPT-5.4，实际上是参数都不清楚的野模型。",
+      "effectText": "Vibe 共鸣 +3，热度 +2，但稳定性 -6，项目完整度 -1。",
+      "effects": [
+        { "type": "stat", "key": "vibe", "value": 3 },
+        { "type": "stat", "key": "hype", "value": 2 },
+        { "type": "stat", "key": "stability", "value": -6 },
+        { "type": "stat", "key": "integrity", "value": -1 }
+      ]
+    }
+  ]
+}
