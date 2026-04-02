@@ -385,6 +385,20 @@
         { "type": "stat", "key": "stability", "value": -6 },
         { "type": "stat", "key": "integrity", "value": -1 }
       ]
+    },
+    {
+      "id": "colleague_skill",
+      "name": "同事.SKILL",
+      "rarity": "epic",
+      "kind": "relic",
+      "flavor": "被毕业的同事其实并没有消失，他们只是被蒸馏成了 Token。",
+      "effectText": "Token 储备 -10，稳定性 +6，项目完整度 +3，遭遇战基础实力 +1。",
+      "effects": [
+        { "type": "stat", "key": "tokens", "value": -10 },
+        { "type": "stat", "key": "stability", "value": 6 },
+        { "type": "stat", "key": "integrity", "value": 3 },
+        { "type": "modifierAdd", "key": "encounterBonus", "value": 1 }
+      ]
     }
   ]
 }
